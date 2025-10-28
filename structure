@@ -1,0 +1,33 @@
+my-ecommerce/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   ├── page.tsx                  # Home (SSG)
+│   ├── products/
+│   │   └── [slug]/
+│   │       └── page.tsx          # Product Detail (ISR)
+│   ├── dashboard/
+│   │   └── page.tsx              # Dashboard (SSR)
+│   ├── admin/
+│   │   └── page.tsx              # Admin (Client)
+│   ├── recommendations/
+│   │   └── page.tsx              # Bonus: Server Components
+│   └── api/
+│       └── products/
+│           ├── route.ts          # GET/POST all
+│           └── [slug]/
+│               └── route.ts      # GET/PUT single
+├── components/
+│   ├── ProductCard.tsx
+│   ├── ProductList.tsx
+│   ├── ProductForm.tsx
+│   └── SearchFilter.tsx
+├── data/
+│   └── products.json             # Mock DB
+├── .env.example
+├── README.md
+├── next.config.js                # For ISR
+├── package.json
+├── tailwind.config.ts            # Optional: For styling
+└── tsconfig.json
+└── ShortReport.md                # 1-2 page report
