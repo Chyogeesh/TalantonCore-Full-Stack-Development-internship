@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "name": "Laptop",
+    "slug": "laptop",
+    "description": "High-end gaming laptop",
+    "price": 999.99,
+    "category": "Electronics",
+    "inventory": 10,
+    "lastUpdated": "2025-10-28T00:00:00Z"
+  },
+  {
+    "id": "2",
+    "name": "Phone",
+    "slug": "phone",
+    "description": "Latest smartphone",
+    "price": 699.99,
+    "category": "Electronics",
+    "inventory": 5,
+    "lastUpdated": "2025-10-28T00:00:00Z"
+  },
+  {
+    "id": "3",
+    "name": "Book",
+    "slug": "book",
+    "description": "Bestselling novel",
+    "price": 19.99,
+    "category": "Books",
+    "inventory": 50,
+    "lastUpdated": "2025-10-28T00:00:00Z"
+  }
+]
