@@ -1,0 +1,69 @@
+'use client';
+import { useState } from 'react';
+import { Product } from '../types';
+
+interface Props {
+  product?: Product;
+  onSubmit: (data: Partial<Product>) => void;
+}
+
+export default function ProductForm({ product, onSubmit }: Props) {
+  const [formData, setFormData] = useState(product || { price: 0, inventory: 0 });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    onSubmit(formData);
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <input 
+        type="text" 
+        placeholder="Name" 
+        value={formData.name || ''} 
+        onChange={e => setFormData({ ...formData, name: e.target.value })}
+        required 
+        className="border p-2 w-full"
+      />
+      <input 
+        type="text" 
+        placeholder="Slug" 
+        value={formData.slug || ''} 
+        onChange={e => setFormData({ ...formData, slug: e.target.value })}
+        required 
+        className="border p-2 w-full"
+      />
+      <textarea 
+        placeholder="Description" 
+        value={formData.description || ''} 
+        onChange={e => setFormData({ ...formData, description: e.target.value })}
+        className="border p-2 w-full"
+      />
+      <input 
+        type="number" 
+        placeholder="Price" 
+        value={formData.price} 
+        onChange={e => setFormData({ ...formData, price: parseFloat(e.target.value) })}
+        required 
+        className="border p-2 w-full"
+      />
+      <input 
+        type="text" 
+        placeholder="Category" 
+        value={formData.category || ''} 
+        onChange={e => setFormData({ ...formData, category: e.target.value })}
+        required 
+        className="border p-2 w-full"
+      />
+      <input 
+        type="number" 
+        placeholder="Inventory" 
+        value={formData.inventory} 
+        onChange={e => setFormData({ ...formData, inventory: parseInt(e.target.value) })}
+        required 
+        className="border p-2 w-full"
+      />
+      <button type="submit" className="bg-blue-500 text-white p-2">Save</button>
+    </form>
+  );
+}
